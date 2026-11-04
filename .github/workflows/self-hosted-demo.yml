@@ -8,13 +8,18 @@ on:
 jobs:
   test:
     runs-on: self-hosted
+    defaults:
+      run:
+        shell: pwsh
 
     steps:
       - name: Welcome
         run: Write-Host "Hello from Windows Self Hosted Runner!"
 
       - name: Check System Info
-        run: Get-ComputerInfo | Select-Object OsName, OsArchitecture
+        run: |
+          Write-Host "OS Version: $($PSVersionTable.OS)"
+          Write-Host "Architecture: $env:PROCESSOR_ARCHITECTURE"
 
       - name: Success
         run: Write-Host "GitHub Actions Runner is working successfully!"

@@ -14,9 +14,7 @@ jobs:
         run: echo "Hello from Windows Self Hosted Runner!"
 
       - name: Check Windows
-        run: ver
+        run: systeminfo
 
       - name: Success
         run: echo "GitHub Actions Runner is working!"
-
-        

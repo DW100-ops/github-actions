@@ -11,10 +11,11 @@ jobs:
 
     steps:
       - name: Welcome
-        run: echo "Hello from Windows Self Hosted Runner!"
+        run: Write-Host "Hello from Windows Self Hosted Runner!"
 
-      - name: Check Windows
-        run: systeminfo
+      - name: Check System Info
+        run: Get-ComputerInfo | Select-Object OsName, OsArchitecture
 
       - name: Success
-        run: echo "GitHub Actions Runner is working!"
+        run: Write-Host "GitHub Actions Runner is working successfully!"
+        

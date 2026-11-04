@@ -1,0 +1,20 @@
+name: Self Hosted Runner Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Welcome
+        run: echo "Hello from Windows Self Hosted Runner!"
+
+      - name: Check Windows
+        run: systeminfo
+
+      - name: Success
+        run: echo "GitHub Actions Runner is working!"
